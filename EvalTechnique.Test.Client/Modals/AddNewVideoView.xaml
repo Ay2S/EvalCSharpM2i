@@ -1,0 +1,63 @@
+﻿<Window x:Class="EvalTechnique.Test.Client.Modals.AddNewVideoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EvalTechnique.Test.Client.Modals"
+        xmlns:comp="clr-namespace:EvalTechnique.Test.Client.Components"
+        mc:Ignorable="d"
+        Title="Formulaire de rajout d'une vidéo à la base"
+        Height="250" Width="450" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <StackPanel Margin="100 0 100 0">
+        
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <RadioButton x:Name="rdMovie" GroupName="VideoType" Margin="10 0 10 0" IsChecked="True">Film</RadioButton>
+            <RadioButton x:Name="rdSerie" GroupName="VideoType" Margin="10 0 10 0" IsChecked="False">Série</RadioButton>
+        </StackPanel>
+
+        <comp:TextField x:Name="txtTitle" Hint="Titre" />
+
+        <comp:TextField x:Name="txtDuration" Hint="Durée">
+            <comp:TextField.Style>
+                <Style TargetType="{x:Type comp:TextField}">
+                    <Setter Property="Visibility" Value="Visible" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=rdMovie, Path=IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </comp:TextField.Style>
+        </comp:TextField>
+
+        <comp:TextField x:Name="txtNbSeasens" Hint="Nbre de saisons">
+            <comp:TextField.Style>
+                <Style TargetType="{x:Type comp:TextField}">
+                    <Setter Property="Visibility" Value="Visible" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=rdSerie, Path=IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </comp:TextField.Style>
+        </comp:TextField>
+
+        <comp:TextField x:Name="txtNbEpisodes" Hint="Nbre d'épisodes">
+            <comp:TextField.Style>
+                <Style TargetType="{x:Type comp:TextField}">
+                    <Setter Property="Visibility" Value="Visible" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=rdSerie, Path=IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </comp:TextField.Style>
+        </comp:TextField>
+
+        <Button x:Name="btnSave" Content="Sauvegarder"
+                Margin="0 20 0 0" HorizontalAlignment="Right"
+                Click="btnSave_Click" />
+    </StackPanel>
+</Window>

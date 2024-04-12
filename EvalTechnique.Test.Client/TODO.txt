@@ -1,0 +1,23 @@
+﻿1 - Implémenter tous les TODO présents dans la solution : Réponse dans le code svp
+
+2 - Expliquer l'architecture globale du projet et les solutions techniques mises en oeuvre
+
+	La solution se dresse selon une architecture 3-tiers :
+	* Couche Données représentée par le projet EvalTechnique.Data
+		> Appelée aussi couche de persistence, et sert à implémenter la logique d'intéraction avec la BDD,
+		avec le paramétrage requis (chaîne de connexion) : URL serveur BDD, Infos de sécurité, Timeout ...
+		> Elle sert notamment à abstraire l'utilisation d'une bibliothèque connue telle ADO.Net ou Dapper
+		ou l'implémentation d'un ORM tel Entity Framework
+	* Couche Métier / Logique d'applis représentée par le projet EvalTechnique.Business
+		> La classe VideoDataBaseManager joue le rôle du Repository
+		> La classe VideoDataBaseService est l'implémentation du contrat du service WCF, jouant le rôle du Controler
+	* Couche Présentation représentée par le projet EvalTechnique.Test.Client
+		> Implémenter en framework WPF selon le pattern MVVM
+		> L'appel au service WCF est assuré par la classe VideoProxy
+		> Avec une transformation des DTO reçus par le service en BO repésentant le modèle de la vue
+	* Le projet EvalTechnique.Server est un Helper servant à fournir une API web de la couche métier à travers une URL + Port bien définis
+	* Le projet EvalTechnique.Client est un Helper est plutôt le Provider côté client qui va servir à abstraire la logique d'appel à un service WCF
+
+- Ajouter sur l'interface graphique cliente l'affichage des résultats (datagrid) : Réponse dans le code svp
+
+- Ajouter une methode pour ajouter un film et sauvegarder le xml a la suite de l'ajout : Réponse dans le code svp

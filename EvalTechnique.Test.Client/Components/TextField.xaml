@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="EvalTechnique.Test.Client.Components.TextField"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EvalTechnique.Test.Client.Components"
+             mc:Ignorable="d">
+    <DockPanel>
+        <TextBlock x:Name="txtHint" DockPanel.Dock="Left" Margin="0 0 10 0" VerticalAlignment="Center" />
+        <TextBox Name="txtValue" MinWidth="100" VerticalAlignment="Center" />
+    </DockPanel>
+</UserControl>

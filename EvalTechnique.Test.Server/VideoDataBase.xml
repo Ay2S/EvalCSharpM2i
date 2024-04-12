@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataBase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Items>
+    <Movie Title="Matrix">
+      <Duration>110</Duration>
+    </Movie>
+    <Movie Title="IronMan">
+      <Duration>0</Duration>
+    </Movie>
+    <Serie Title="Dr House">
+      <Seasons>
+        <Season Number="1">
+          <Episodes>
+            <Episode Title="Debut" />
+            <Episode Title="Fin" />
+          </Episodes>
+        </Season>
+        <Season Number="2">
+          <Episodes>
+            <Episode Title="Debut" />
+            <Episode Title="Fin" />
+          </Episodes>
+        </Season>
+      </Seasons>
+    </Serie>
+    <Movie Title="Iron Man 2">
+      <Duration>192</Duration>
+    </Movie>
+  </Items>
+</DataBase>
